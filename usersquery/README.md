@@ -1,4 +1,4 @@
-# cqrs-userscommand
+# cqrs-usersquery
 Tarea: Crear el “INIT’ de un Proyecto Backend con Arquitectura Hexagonal
 y CQRS
 
@@ -41,7 +41,7 @@ docker-compose up -d
 poetry install
 
 ## Usage
-To start the userscommand:
+To start the usersquery:
 uvicorn app:app
 
 ## Run tests
