@@ -1,7 +1,9 @@
 from redis import asyncio as aioredis # a partir de python 3.11, usar esta lib
 import json
 
-class RedisCache:
+from src.ports.repositories.cache_repository import CacheRepository
+
+class RedisCache(CacheRepository):
     def __init__(self):
         self.redis = None
 

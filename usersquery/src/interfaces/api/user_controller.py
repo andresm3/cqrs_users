@@ -8,6 +8,7 @@ from src.domain.use_cases.find_user_by_id import FindUserByIdUseCase
 from src.domain.use_cases.find_user_by_email import FindUserByEmailUseCase
 from src.interfaces.config_db import SessionLocal
 from src.interfaces.api.errors import ValidationError
+from src.interfaces.redis_cache import redis_cache
 
 router = APIRouter()
 
@@ -21,7 +22,7 @@ async def get_user_by_id(user_id: int) -> JSONResponse:
 
     session = SessionLocal()
     user_repo = SQLAlchemyUserRepository(session)
-    use_case = FindUserByIdUseCase(user_repo)
+    use_case = FindUserByIdUseCase(user_repo, redis_cache)
     user = await use_case.execute(user_id)
     session.close()
 

@@ -42,12 +42,18 @@ poetry install
 
 ## Usage
 To start the userscommand:
+```bash
 python.exe .\main.py
+```
 
 ## Run tests
 To run unit and integration tests:
+```bash
 python -m unittest discover
+```
 
 ## Documentation
 Using swaggerUI express, API documentation will be in the following path
 http://localhost:8000/docs
+
+- Ir a tu cuenta de gitlab y generar nuevo token para poder usar culqify 0.1.4 ([LINK](https://gitlab.com/-/profile/personal_access_tokens))
