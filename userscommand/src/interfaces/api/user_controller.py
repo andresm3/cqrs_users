@@ -17,8 +17,9 @@ class RegisterUserRequest(BaseModel):
 
 @router.post("/users/register", tags=["users"], description="Create a new user")
 def create_user(request: RegisterUserRequest) -> JSONResponse:
-    session = SessionLocal()
+    
     try:
+        session = SessionLocal()
         user_repo = SQLAlchemyUserRepository(session)
         create_user_use_case = CreateUserUseCase(user_repo)
         create_user_use_case.execute(request.username, request.email, request.password)

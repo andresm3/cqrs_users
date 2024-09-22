@@ -42,7 +42,7 @@ poetry install
 
 ## Usage
 To start the userscommand:
-uvicorn app:app
+python.exe .\main.py
 
 ## Run tests
 To run unit and integration tests:

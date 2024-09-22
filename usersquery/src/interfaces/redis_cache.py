@@ -1,4 +1,4 @@
-from redis import asyncio as aioredis
+from redis import asyncio as aioredis # a partir de python 3.11, usar esta lib
 import json
 
 class RedisCache:

@@ -7,6 +7,7 @@ Python 3.11
 FastAPI
 SQLAlchemy
 MySQL
+Redis
 
 ## Estructura de carpetas
 ```bash
@@ -42,7 +43,7 @@ poetry install
 
 ## Usage
 To start the usersquery:
-uvicorn app:app
+python.exe .\main.py
 
 ## Run tests
 To run unit and integration tests:
@@ -50,4 +51,4 @@ python -m unittest discover
 
 ## Documentation
 Using swaggerUI express, API documentation will be in the following path
-http://localhost:8000/docs
+http://localhost:8010/docs

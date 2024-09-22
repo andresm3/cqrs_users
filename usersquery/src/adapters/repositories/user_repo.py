@@ -7,14 +7,18 @@ class SQLAlchemyUserRepository(UserRepository):
     def __init__(self, session: Session):
         self.session = session
 
-    def find_by_email(self, email: str) -> User:
+    def find_by_email(self, email: str) -> UserModel:
         user_model = self.session.query(UserModel).filter_by(email=email).first()
         if user_model:
-            return user_model.to_domain()  # Convierte de modelo SQLAlchemy a entidad de dominio
+            return user_model
         return None
 
-    def find_by_id(self, id: int) -> User:
+    def find_by_id(self, id: int) -> UserModel:
         user_model = self.session.query(UserModel).filter(UserModel.id == id).first()
         if user_model:
-            return user_model.to_dict()
+            return user_model
         return None
+    
+    def save(self, user_model: UserModel):
+        self.session.add(user_model)
+        self.session.commit()
