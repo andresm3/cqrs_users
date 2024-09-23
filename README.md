@@ -19,8 +19,8 @@ Recrear el docker image container desde la raiz:
 docker-compose up -d
 ```
 
-## Despliegue Microservicios
-Dirigirse a la raiz de cada proyecto y ejecutar los comandos de instalar dependencias y levantar Api Rest especificados aqui
+## Despliegue Microservicios y Tests
+Dirigirse a la raiz de cada proyecto y ejecutar los comandos de instalar dependencias y levantar Api Rest especificados aqui:
 - [Microservicio userscommand](userscommand/README.md)
 - [Microservicio usersquery](usersquery/README.md)
 
