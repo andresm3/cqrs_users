@@ -50,6 +50,14 @@ To run unit and integration tests:
 python -m unittest discover
 ```
 
+## Run Coverage tests
+To run coverage test:
+```bash
+coverage run -m unittest discover
+coverage report
+coverage html
+```
+
 ## Documentation
 Using swaggerUI express, API documentation will be in the following path
 http://localhost:8000/docs

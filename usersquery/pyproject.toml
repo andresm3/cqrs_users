@@ -16,6 +16,7 @@ redis = "^5.0.8"
 email-validator = "^2.2.0"
 pydantic = "^2.9.2"
 aiounittest = "^1.4.2"
+coverage = "^7.6.1"
 
 
 [build-system]
