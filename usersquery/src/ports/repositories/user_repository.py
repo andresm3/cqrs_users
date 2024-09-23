@@ -10,7 +10,3 @@ class UserRepository(ABC):
     @abstractmethod
     def find_by_id(self, id: int) -> UserModel:
         pass
-    
-    @abstractmethod
-    def save(self, user_model: UserModel):
-        pass

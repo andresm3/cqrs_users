@@ -11,9 +11,3 @@ class SQLAlchemyUserRepository(UserRepository):
         user_model = UserModel.from_domain(user)  # Convierte de entidad de dominio a modelo SQLAlchemy
         self.session.add(user_model)
         self.session.commit()
-
-    def find_by_email(self, email: str) -> User:
-        user_model = self.session.query(UserModel).filter_by(email=email).first()
-        if user_model:
-            return user_model.to_domain()  # Convierte de modelo SQLAlchemy a entidad de dominio
-        return None

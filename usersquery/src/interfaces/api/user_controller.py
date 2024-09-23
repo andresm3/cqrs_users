@@ -8,7 +8,7 @@ from src.domain.use_cases.find_user_by_id import FindUserByIdUseCase
 from src.domain.use_cases.find_user_by_email import FindUserByEmailUseCase
 from src.interfaces.config_db import SessionLocal
 from src.interfaces.api.errors import ValidationError
-from src.interfaces.redis_cache import redis_cache
+from src.adapters.redis_cache import redis_cache
 
 router = APIRouter()
 

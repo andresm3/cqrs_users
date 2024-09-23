@@ -3,7 +3,7 @@ from fastapi import FastAPI
 
 from src.interfaces.api import user_controller
 from src.interfaces.api.openapi import tags_metadata
-from src.interfaces.redis_cache import init_redis
+from src.adapters.redis_cache import init_redis
 
 app = FastAPI(
     title="users-query",

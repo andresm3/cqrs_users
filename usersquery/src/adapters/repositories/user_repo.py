@@ -1,6 +1,5 @@
 from sqlalchemy.orm import Session
 from src.ports.repositories.user_repository import UserRepository
-from src.domain.entities.user import User
 from src.adapters.models.user_model import UserModel
 
 class SQLAlchemyUserRepository(UserRepository):
@@ -18,7 +17,3 @@ class SQLAlchemyUserRepository(UserRepository):
         if user_model:
             return user_model
         return None
-    
-    def save(self, user_model: UserModel):
-        self.session.add(user_model)
-        self.session.commit()

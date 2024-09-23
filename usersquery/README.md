@@ -1,6 +1,6 @@
 # cqrs-usersquery
-Tarea: Crear el “INIT’ de un Proyecto Backend con Arquitectura Hexagonal
-y CQRS
+Siguiendo el patron CQRS, este Microservicio se encarga de las operaciones de Consulta(Query) sobre la entidad Users. Esta optimizado para consultas usando memoria en cache(Redis), se usa la misma base de datos del microservicio que se encarga de los Comandos, la tabla users esta normalizada y con indices necesarios.
+Esta implementacion facilita la escalabilidad y optimizacion de recursos de los microservicios desplegados.
 
 ## Stack
 Python 3.11
@@ -24,8 +24,7 @@ Redis
         /models                 # Implementacion de entidades en ORM
         /repositories
             /user_repo.py           # Implementación del puerto para repositorio SQLAlchemy
-        /services
-            /email_service.py    # Implementación del puerto para enviar emails
+        /redis_cache.py           # Implementación del puerto para Cache Redis
     /interfaces
       /api                      # Adaptador para la API REST usando FastAPI
       /config_db.py             # Configuracion BD
@@ -34,20 +33,22 @@ Redis
     /adapters                   # Tests sobre adaptadores: repositorios, servicios
 ```
 
-## Configuration
-You will need to recreate docker image container from the root path:
-docker-compose up -d
-
-## Installing librariproject dependencieses
+## Installing library project dependencies
+```bash
 poetry install
+```
 
 ## Usage
 To start the usersquery:
+```bash
 python.exe .\main.py
+```
 
 ## Run tests
 To run unit and integration tests:
+```bash
 python -m unittest discover
+```
 
 ## Documentation
 Using swaggerUI express, API documentation will be in the following path

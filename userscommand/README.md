@@ -1,6 +1,6 @@
 # cqrs-userscommand
-Tarea: Crear el “INIT’ de un Proyecto Backend con Arquitectura Hexagonal
-y CQRS
+Siguiendo el patron CQRS, este Microservicio se encarga de las operaciones de Comandos(Command) sobre la entidad Users. Se utiliza base de datos MySQL, la tabla users esta normalizada y con indices necesarios.
+Esta implementacion facilita la escalabilidad y optimizacion de recursos de los microservicios desplegados.
 
 ## Stack
 Python 3.11
@@ -33,12 +33,10 @@ MySQL
     /adapters                   # Tests sobre adaptadores: repositorios, servicios
 ```
 
-## Configuration
-You will need to recreate docker image container from the root path:
-docker-compose up -d
-
-## Installing librariproject dependencieses
+## Installing library project dependencies
+```bash
 poetry install
+```
 
 ## Usage
 To start the userscommand:
@@ -55,5 +53,3 @@ python -m unittest discover
 ## Documentation
 Using swaggerUI express, API documentation will be in the following path
 http://localhost:8000/docs
-
-- Ir a tu cuenta de gitlab y generar nuevo token para poder usar culqify 0.1.4 ([LINK](https://gitlab.com/-/profile/personal_access_tokens))
